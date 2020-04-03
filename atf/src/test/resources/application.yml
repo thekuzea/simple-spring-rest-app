@@ -1,0 +1,28 @@
+spring:
+  main:
+    banner-mode: off
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: quattro
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=experimental_app
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    hibernate.ddl-auto: none
+
+experimental:
+  security:
+    default-role: user
+  api:
+    protocol: http
+    host: localhost
+    port: 7070
+    path: /experimental/api
+    subPaths:
+      user: /user
+      role: /role
+      publication: /publication
+      authentication: /auth
